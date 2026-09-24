@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services — Eximto</title><meta name="description" content="Eximto — Trade Simplified"><style>
+:root{
+  --bg:#ffffff; --near:#f7f9fc; --text:#111827; --muted:#667085;
+  --primary:#3c83ef; --accent:#65a8ff; --card:#fff; --border:#e2e8f4;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--bg)}
+a{color:inherit;text-decoration:none}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:auto;padding:0 20px}
+.logo{font-size:1.35rem;font-weight:800;color:var(--primary)}
+.navlinks{display:flex;gap:24px;align-items:center}
+.navlinks a{font-size:.94rem;color:#475467}
+.navlinks a:hover{color:var(--primary)}
+.navbtn{padding:10px 16px;border-radius:8px;background:var(--primary);color:#fff!important;font-weight:650}
+.hero{background:var(--near);text-align:center;padding:72px 20px}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;margin:0;font-weight:800}
+.hero p{max-width:720px;margin:16px auto 0;font-size:1.05rem;line-height:1.7;color:var(--muted)}
+.underline{width:56px;height:4px;border-radius:2px;background:var(--accent);margin:32px auto 0}
+.container{max-width:1080px;margin:auto;padding:64px 16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{padding:32px;border-radius:14px;background:var(--card);border:1px solid var(--border)}
+.card h3{margin:10px 0 8px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.75}
+.icon{font-size:1.8rem}
+.cta{background:var(--primary);color:#fff;text-align:center;padding:64px 20px}
+.cta h2{margin:0;font-size:clamp(1.4rem,3vw,2rem)}
+.cta p{margin:12px 0 0;color:rgba(255,255,255,.8)}
+.pricing{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.plan{padding:32px;border-radius:14px;border:1px solid var(--border);background:#fff;display:flex;flex-direction:column}
+.plan.popular{border:2px solid var(--primary);background:#eef5ff}
+.badge{display:inline-block;align-self:flex-start;font-size:.72rem;font-weight:700;color:var(--primary);background:rgba(60,131,239,.12);padding:5px 10px;border-radius:20px;margin-bottom:18px}
+.plan h3{margin:0 0 8px}
+.price{font-size:2.6rem;font-weight:800;color:var(--primary)}
+.price.custom{font-size:1.9rem}
+.period{font-size:.85rem;color:var(--muted)}
+.tagline{color:var(--muted);font-size:.87rem;line-height:1.65;margin:10px 0 24px}
+.plan hr{border:0;border-top:1px solid var(--border);width:100%;margin:0 0 22px}
+.features{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:10px;flex:1}
+.features li{font-size:.88rem;line-height:1.55}
+.features li::before{content:"✓";color:var(--primary);font-weight:800;margin-right:10px}
+.button{display:block;text-align:center;padding:12px;border-radius:8px;font-weight:700;border:1.5px solid var(--primary);color:var(--primary)}
+.button.primary{background:var(--primary);color:#fff}
+.note{text-align:center;color:var(--muted);font-size:.88rem;margin:0 0 40px}
+.contact-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:32px}
+label{display:block;font-size:.85rem;font-weight:650;margin:0 0 7px}
+input,textarea{width:100%;padding:12px 14px;border:1.5px solid #d1d9ec;border-radius:8px;background:#f8faff;font:inherit;outline:none}
+input:focus,textarea:focus{border-color:var(--primary)}
+textarea{min-height:150px;resize:vertical}
+.form{display:grid;gap:18px}
+.info{display:grid;gap:22px}
+.info-row{display:flex;gap:14px;align-items:flex-start}
+.info-icon{min-width:38px;height:38px;border-radius:8px;display:grid;place-items:center;background:rgba(60,131,239,.08)}
+.info-label{font-size:.75rem;font-weight:700;color:#667085}
+.info-value{font-size:.88rem;margin-top:3px}
+footer{padding:28px 20px;text-align:center;color:#98a2b3;font-size:.82rem;border-top:1px solid var(--border)}
+.login{min-height:calc(100vh - 72px);display:grid;place-items:center;padding:30px;background:var(--near)}
+.login-box{text-align:center;padding:36px 24px;max-width:480px}
+.login-box h1{font-size:clamp(2rem,5vw,3rem);margin:0 0 12px}
+.login-box p{color:var(--muted);line-height:1.7;margin-bottom:28px}
+.google{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1px solid var(--border);padding:13px 22px;border-radius:9px;font-weight:700;box-shadow:0 2px 8px rgba(16,24,40,.06)}
+.alert{margin-bottom:20px;padding:12px 16px;border-radius:8px;background:#fff4e5;color:#8a4b00;border:1px solid #ffd8a8;font-size:.9rem}
+@media(max-width:760px){
+ .navlinks{gap:12px}.navlinks a:nth-child(1){display:none}
+ .grid,.pricing,.contact-grid{grid-template-columns:1fr}
+ .hero{padding:56px 18px}.container{padding:48px 16px}
+}
+</style></head>
+<body>
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html">Eximto</a>
+    <div class="navlinks">
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact-us.html">Contact</a>
+      <a class="navbtn" href="index.html#login">Get started</a>
+    </div>
+  </nav>
+</header>
+<main>
+<section class="hero"><h1>Seller growth tools</h1>
+<p>Built for sellers — accelerate listings, pricing, inventory, and analytics to grow sales.</p><div class="underline"></div></section>
+<section class="container"><div class="grid">
+<div class="card"><div class="icon">🛒</div><h3>Listing Optimization</h3><p>Improve visibility with SEO-friendly titles, enhanced bullets, and content recommendations to boost conversions.</p></div>
+<div class="card"><div class="icon">📦</div><h3>Inventory Sync</h3><p>Real-time inventory and availability across channels to avoid stockouts and oversells.</p></div>
+<div class="card"><div class="icon">🧾</div><h3>Order &amp; Returns Management</h3><p>Centralized order processing, automated returns handling, and status reconciliation for all fulfillment types.</p></div>
+<div class="card"><div class="icon">💸</div><h3>Pricing &amp; Repricer</h3><p>Automated repricing strategies to win the Buy Box while protecting margins.</p></div>
+<div class="card"><div class="icon">📈</div><h3>Brand Analytics &amp; Insights</h3><p>Sales, buy box, and conversion analytics with customizable dashboards and CSV exports.</p></div>
+<div class="card"><div class="icon">🔁</div><h3>Automations &amp; Workflows</h3><p>Rule-based automations for listings, shipments, feedback messages, and repricing triggers.</p></div>
+</div></section>
+<section class="cta"><h2>Scale your trade operations today.</h2><p>Join the growing network of global traders on Eximto.</p></section>
+</main>
+<footer>© 2026 Eximto. Trade simplified.</footer></body></html>
